@@ -6,7 +6,6 @@ exports.MyBike = function(manufacture, serial, location) {
 };
 
 exports.MyBike.prototype.isStolen = function(search_serial) {
-
   if (this.serial === search_serial) {
     return true;
   }
@@ -34,8 +33,4 @@ exports.MyBike.prototype.countManufacture = function (search_manufacture) {
     } else {
       return false;
     }
-
-
-
-
 };

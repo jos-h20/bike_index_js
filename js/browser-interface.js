@@ -1,6 +1,7 @@
 var MyBike = require('./../js/mybike.js').MyBike;
 var moment = require('moment');
-// var apiKey = require('./../.env').apiKey;
+// var bike_query = $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&proximity_square=200&stolen_after=0');
+var apiKey = require('./../.env').apiKey;
 
 $(document).ready(function(){
 
@@ -25,8 +26,8 @@ $(document).ready(function(){
       var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
       return time;
     }
-  //
-    $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&proximity_square=200&stolen_after=0').then(function(response) {
+
+    $.get(apiKey).then(function(response) {
       var bikes_array = response.bikes;
       console.log(bikes_array);
         var stolen_bike = [];
@@ -59,7 +60,7 @@ $(document).ready(function(){
 
     var myBike = new MyBike(my_manufacture, my_serial, my_location);
 
-    $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&per_page=100&proximity_square=200&stolen_after=0').then(function(response) {
+    $.get(apiKey).then(function(response) {
 
       var bikes_array = response.bikes;
       var manufacture_count = 0;
