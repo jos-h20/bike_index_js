@@ -1,29 +1,42 @@
 var expect = require('chai').expect;
-var Class = require('./../js/class.js').Class;
+var MyBike = require('./../js/mybike.js').MyBike;
 
-describe("Class", function() {
+describe("MyBike", function() {
   it("will return the current property", function() {
-    var currentProperty = "12:00";
-    var setProperty = "12:00";
-    var testClass = new Class(currentProperty, setProperty);
-    expect(testClass.currentProperty).to.equal(currentProperty);
+    var manufacture = "Novara";
+    var serial = "U156U20389";
+    var location = "Portland";
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.manufacture).to.equal(manufacture);
   });
   it("will return the set property", function() {
-    var currentProperty= "12:00";
-    var setProperty= "12:00";
-    var testClass = new Class(currentProperty, setProperty);
-    expect(testClass.setProperty).to.equal(setProperty);
+    var manufacture= "Novara";
+    var serial= "U156U20389";
+    var location = "Portland";
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.serial).to.equal(serial);
   });
   it("will trigger a freakish alarm", function() {
-    var currentProperty = "12:00";
-    var setProperty = "12:00";
-    var testClass = new Class(currentProperty, setProperty);
-    expect(testClass.triggerAlarm(currentProperty, setProperty)).to.equal(true);
+    var manufacture = "Novara";
+    var serial = "U156U20389";
+    var location = "Portland";
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.location).to.equal("Portland");
   });
   it("will trigger a freakish alarm", function() {
-    var currentProperty = "12:00";
-    var setProperty = "12:05";
-    var testClass = new Class(currentProperty, setProperty);
-    expect(testClass.triggerAlarm(currentProperty, setProperty)).to.equal(false);
+    var manufacture = "Novara";
+    var search_serial = "U156U20389"
+    var serial = "U156U20389";
+    var location = "Portland";
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.isStolen(search_serial)).to.equal(true);
+  });
+  it("will trigger a freakish alarm", function() {
+    var manufacture = "Novara";
+    var search_serial = "U156U20389"
+    var serial = "U156U20384";
+    var location = "Portland";
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.isStolen(search_serial)).to.equal(false);
   });
 });
