@@ -25,9 +25,8 @@ $(document).ready(function(){
         } else {
           $('#bike-not-stolen').text("Your Bike is not stolen");
         }
-
+    }).fail(function(error){
+      $('#bike-not-stolen').text("Shit's broke. Try again later.");
     });
   });
-
-
 }); //End of when ready

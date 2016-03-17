@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  
   $('#search_manufacture').submit(function(event){
     event.preventDefault();
 
@@ -19,6 +18,8 @@ $(document).ready(function() {
           manufacture_count++;
         } $('#manufacture_count').text(my_manufacture + " was matched " + manufacture_count + " times.");
       }
+    }).fail(function(error){
+      $('#bike-not-stolen').text("Shit's broke. Try again later.");
     });
   }); //end of search manufacture function
 
