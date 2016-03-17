@@ -1,8 +1,8 @@
 {
-  "name": "template",
+  "name": "bike_index",
   "description": "default",
   "main": "gulpfile.js",
-  "license": "ISC",
+  "license": "MIT",
   "moduleType": [],
   "homepage": "https://github.com/jos-h20/js-template",
   "ignore": [

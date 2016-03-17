@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "bike_index",
   "version": "1.0.0",
   "description": "an awesome alarm clock",
   "main": "gulpfile.js",
@@ -30,8 +30,8 @@
   "scripts": {
     "test": "mocha test"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "jon sweeney and josh overly",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jos-h20/js-template.git"
