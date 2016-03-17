@@ -48,4 +48,14 @@ describe("MyBike", function() {
     var testMyBike = new MyBike(manufacture, serial, location);
     expect(testMyBike.convertTimeStamp(unix_time)).to.equal("17 Mar 2016 11:17:20");
   });
+  it("will count manufacture match", function() {
+    var manufacture = "Novara";
+    var search_serial = "U156U20389";
+    var search_manufacture = "Novara";
+    var serial = "U156U20384";
+    var location = "Portland";
+    var unix_time = 1458238640;
+    var testMyBike = new MyBike(manufacture, serial, location);
+    expect(testMyBike.countManufacture(search_manufacture)).to.equal(true);
+  });
 });

@@ -27,3 +27,15 @@ exports.MyBike.prototype.convertTimeStamp = function(unix_time) {
   var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
   return time;
 };
+
+exports.MyBike.prototype.countManufacture = function (search_manufacture) {
+    if (this.manufacture === search_manufacture) {
+      return true;
+    } else {
+      return false;
+    }
+
+
+
+
+};
